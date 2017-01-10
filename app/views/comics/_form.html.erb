@@ -1,0 +1,66 @@
+<%= form_for @comic do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </p>
+
+  <p>
+    <%= f.label :short_description %><br>
+    <%= f.text_area :short_description %>
+  </p>
+
+  <p>
+    <%= f.label :long_description %><br>
+    <%= f.text_area :long_description %>
+  </p>
+
+  <p>
+    <%= f.label :pages_count %><br>
+    <%= f.text_field :pages_count %>
+  </p>
+
+  <p>
+    <%= f.label :size %><br>
+    <%= f.text_field :size %>
+  </p>
+
+  
+    
+   <p>
+    <b>paid</b><br />
+    <%= f.radio_button :paid, true, checked: @comic.paid %> True<br />
+    <%= f.radio_button :paid, false,checked: !@comic.paid %> False<br />
+    
+  </p>
+
+  <p>
+    <b>featured</b><br />
+    <%= f.radio_button :featured, true, checked: @comic.featured %> True<br />
+    <%= f.radio_button :featured, false, checked: !@comic.featured %> False<br />
+    
+  </p>
+
+  <p>
+    <b>popular</b><br />
+    <%= f.radio_button :popular, true, checked: @comic.popular %> True<br />
+    <%= f.radio_button :popular, false, checked: !@comic.popular %> False<br />
+    
+  </p>
+ 
+  <p>
+    <b>published</b><br />
+    <%= f.radio_button :published, true, checked: @comic.published %> True<br />
+    <%= f.radio_button :published, false, checked: !@comic.published %> False<br />
+    
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+  <% end %>

@@ -1,66 +1,6 @@
 <h1>Create New Comic</h1>
-<%= form_for :comic, url: comics_path do |f| %>
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </p>
 
-  <p>
-    <%= f.label :price %><br>
-    <%= f.text_field :price %>
-  </p> 
+<%= render 'form' %>
 
 
- <p>
-    <%= f.label :short_description %><br>
-    <%= f.text_area :short_description %>
-  </p>
-
-  <p>
-    <%= f.label :long_description %><br>
-    <%= f.text_area :long_description %>
-  </p>
-
-  <p>
-    <%= f.label :pages_count %><br>
-    <%= f.text_field :pages_count %>
-  </p>
-
-  <p>
-    <%= f.label :size %><br>
-    <%= f.text_field :size %>
-  </p>
-
-  <p>
-    <b>paid</b><br />
-    <%= f.radio_button :paid, 'True' %> True<br />
-    <%= f.radio_button :paid, 'false' %> False<br />
-    
-  </p>
-
-  <p>
-    <b>featured</b><br />
-    <%= f.radio_button :featured, 'True' %> True<br />
-    <%= f.radio_button :featured, 'false' %> False<br />
-    
-  </p>
-
-  <p>
-    <b>popular</b><br />
-    <%= f.radio_button :popular, 'True' %> True<br />
-    <%= f.radio_button :popular, 'false' %> False<br />
-    
-  </p>
- 
-  <p>
-    <b>published</b><br />
-    <%= f.radio_button :published, 'True' %> True<br />
-    <%= f.radio_button :published, 'false' %> False<br />
-    
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
 <%= link_to 'Back', comics_path %>
