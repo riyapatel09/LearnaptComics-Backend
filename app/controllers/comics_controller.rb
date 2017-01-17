@@ -5,15 +5,48 @@ class ComicsController < ApplicationController
   end
   
   def show
-    @comic = Comic.find params[:id]
+     @comics = Comic.all
+    #@comic = Comic.find(params[:id])
+  
+=begin
+
+     respond_to do |format|
+     format.html
+     format.json { render json: @comic } 
+  
+   end
+=end
+
+
+
+
+
+
+    
+
+    
+
+    #Comic.create(:name => 'Jamie')
+    #Comic.create(:id => '500')
+
+    #User.authenticate(params[:username], params[:password])
+  
+
+    # respond_to do |format|
+    # format.html
+    # format.json { render json: @comic } 
+    # end
   end
   
   def new
     @comic = Comic.new
+    
+    
+   
   end
 
   def create
-    @comic = Comic.new(comic_params)
+    @comic = Comic.new
  
     if @comic.save
       redirect_to @comic

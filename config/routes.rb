@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :comics
   get 'comics/create'
 
@@ -11,5 +12,8 @@ Rails.application.routes.draw do
   get 'comics/edit'
 
   root 'comics#index'
+
+  get "api/mobile/v1/home/featured-comics" => "api/mobile/v1/home#featured_comics"
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
