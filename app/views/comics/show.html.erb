@@ -1,50 +1,56 @@
-<p>
-  <strong>Name:</strong>
-  <%= @comic.name %>
-</p>
- 
-<p>
-  <strong>Price:</strong>
-  <%= @comic.price %>
-</p>
+<h2 class="sub-header">Comic-Details</h2>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><strong>Name:</strong></th>
+          <th><%= @comic.name %></th>
+        </tr>
+        <tr>
+          <th><strong>Price:</strong></th>
+          <th><%= @comic.price %></th>
+        </tr>  
+        <tr>
+          <th><strong>short_description:</strong></th>
+          <th><%= @comic.short_description %></th>
+        </tr>
+        <tr>
+          <th><strong>long_description:</strong></th>
+          <th><%= @comic.long_description %></th>
+        </tr>
+        <tr>
+          <th><strong>pages_count:</strong></th>
+          <th><%= @comic.pages_count %></th>
+        </tr>
+        <tr>
+          <th><strong>size:</strong></th>
+          <th><%= @comic.size %></th>
+        </tr>
+        <tr>
+          <th><strong>paid:</strong></th>
+          <th><%= @comic.paid %></th>
+        </tr>
+        <tr>
+          <th><strong>featured:</strong></th>
+          <th><%= @comic.featured %></th>
+        </tr>
+        <tr>
+          <th><strong>popular:</strong></th>
+          <th><%= @comic.popular %></th>
+        </tr>
+        <tr>
+          <th><strong>published:</strong></th>
+          <th><%= @comic.published %></th>
+        </tr>
+      </thead>
+    </table>
+    <a  href="http://localhost:3000/comics/" >
+    <button>Back</button>
+    </a>
+  </div>
 
-<p>
-  <strong>short_description:</strong>
-  <%= @comic.short_description %>
-</p>
 
-<p>
-  <strong>long_description:</strong>
-  <%= @comic.long_description %>
-</p>
 
-<p>
-  <strong>pages_count:</strong>
-  <%= @comic.pages_count %>
-</p>
-<p>
-  <strong>size:</strong>
-  <%= @comic.size %>
-</p>
 
-<p>
-  <strong>paid:</strong>
-  <%= @comic.paid %>
-</p>
 
-<p>
-  <strong>featured:</strong>
-  <%= @comic.featured %>
-</p>
 
-<p>
-  <strong>popular:</strong>
-  <%= @comic.popular %>
-</p>
-
-<p>
-  <strong>published:</strong>
-  <%= @comic.published %>
-</p>
-
-<%= link_to 'Back', comics_path %>

@@ -1,3 +1,4 @@
+
 <%= form_for @comic do |f| %>
   <p>
     <%= f.label :name %><br>
@@ -31,7 +32,7 @@
 
   
     
-   <p>
+  <p>
     <b>paid</b><br />
     <%= f.radio_button :paid, true, checked: @comic.paid %> True<br />
     <%= f.radio_button :paid, false,checked: !@comic.paid %> False<br />
@@ -63,4 +64,5 @@
     <%= f.submit %>
   </p>
  
-  <% end %>
+<% end %>
+  

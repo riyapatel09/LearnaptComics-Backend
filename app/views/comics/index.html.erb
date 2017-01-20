@@ -1,23 +1,23 @@
-<h1>Listing comics</h1>
- 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Price</th>
-     <th colspan="3"></th>
-  </tr>
- 
-  <% @comics.each do |comic| %>
-    <tr>
-      <td><%= comic.name %></td>
-      <td><%= comic.price %></td>
-      <td><%= link_to 'Show', comic_path(comic) %></td>
-      <td><%= link_to 'Edit', edit_comic_path(comic) %></td>
-      <td><%= link_to 'Destroy', comic_path(comic),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
-
-    </tr>
-  <% end %>
-</table>
-<%= link_to 'New comic', new_comic_path %>
+<h2 class="sub-header">Learnapt-Comics</h2>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <h4>Comic Name</h4>
+        <% @comics.each do |comic| %>
+          <tr>
+            <th><%= comic.name %></th>
+            <th><%= link_to 'Show', comic_path(comic) %></th>
+            <th><%= link_to 'Edit', edit_comic_path(comic) %></th>
+            <th><%= link_to 'Destroy', comic_path(comic),
+                             method: :delete,
+                             data: { confirm: 'Are you sure?' } %></th>
+          </tr>
+        <% end %>     
+      </thead>
+    </table>
+    <a  href="http://localhost:3000/comics/new" >
+    <button>New Comic</button>
+    </a>
+  </div>
+        
+              

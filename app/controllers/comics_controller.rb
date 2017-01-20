@@ -5,44 +5,11 @@ class ComicsController < ApplicationController
   end
   
   def show
-     @comics = Comic.all
-    #@comic = Comic.find(params[:id])
-  
-=begin
-
-     respond_to do |format|
-     format.html
-     format.json { render json: @comic } 
-  
-   end
-=end
-
-
-
-
-
-
-    
-
-    
-
-    #Comic.create(:name => 'Jamie')
-    #Comic.create(:id => '500')
-
-    #User.authenticate(params[:username], params[:password])
-  
-
-    # respond_to do |format|
-    # format.html
-    # format.json { render json: @comic } 
-    # end
+    @comic = Comic.find(params[:id])
   end
   
   def new
     @comic = Comic.new
-    
-    
-   
   end
 
   def create
