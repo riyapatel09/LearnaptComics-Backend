@@ -13,7 +13,7 @@ class ComicsController < ApplicationController
   end
 
   def create
-    @comic = Comic.new
+    @comic = Comic.new(comic_params)
  
     if @comic.save
       redirect_to @comic

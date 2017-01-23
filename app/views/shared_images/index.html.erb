@@ -1,0 +1,15 @@
+<h1>Listing of images </h1>
+ 
+<table>
+ <% @sharedImages.each do |sharedImage| %>
+    <tr>
+      <td><%= sharedImage.original_image %></td>
+      <td><%= image_tag sharedImage.original_image.to_s %></td>
+      <td><%= link_to 'Show', shared_image_path(sharedImage) %></td>
+      <td><%= link_to 'Edit', edit_shared_image_path(sharedImage) %></td>
+      <td><%= link_to 'Destroy', shared_image_path(sharedImage),
+                             method: :delete,
+                             data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

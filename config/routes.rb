@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
+  resources :shared_images
+  get 'shared_images/index'
 
+  get 'shared_images/show'
+
+  get 'shared_images/new'
+
+  get 'shared_images/edit'
+
+  
   resources :comics
   get 'comics/create'
 
