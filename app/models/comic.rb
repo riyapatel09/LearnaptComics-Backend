@@ -2,6 +2,6 @@ class Comic < ApplicationRecord
   has_many :comic_images
 
   def temp_image_url
-    return "http://cdn.blackenterprise.com/wp-content/blogs.dir/1/files/2012/10/google_logo.jpg"
+    return "https://s3.amazonaws.com/learnapt-comics-dev/uploads/shared_image/original_image/129/thumb_b3.jpg"
   end
 end

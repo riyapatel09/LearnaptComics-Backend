@@ -5,6 +5,7 @@ class SharedImagesController < ApplicationController
   
   def show
     @sharedImage = SharedImage.find(params[:id])
+    
   end
   
   def new
@@ -16,7 +17,7 @@ class SharedImagesController < ApplicationController
     @sharedImage = SharedImage.new(shared_image_params)
  
     if @sharedImage.save
-      redirect_to @sharedImage
+      redirect_to @sharedImage, notice: 'SharedImage was successfully created.'
     else
       render 'new'
     end
@@ -30,7 +31,7 @@ class SharedImagesController < ApplicationController
     @sharedImage = SharedImage.find(params[:id])
  
     if @sharedImage.update(shared_image_params)
-      redirect_to @sharedImage
+      redirect_to @sharedImage, notice: 'SharedImage attachment was syuccessfully updated.'
     else
       render 'edit'
     end
@@ -40,10 +41,14 @@ class SharedImagesController < ApplicationController
     @sharedImage = SharedImage.find(params[:id])
     @sharedImage.destroy
  
-    redirect_to sharedImages_path
+    redirect_to sharedImages_path, notice: 'SharedImage was successfully destroyed.'
   end
 
   private
+
+  def set_sharedImage
+    @sharedImage = SharedImage.find(params[:id])
+  end
   def shared_image_params
     params.require(:shared_image).permit(:original_image)
   end
