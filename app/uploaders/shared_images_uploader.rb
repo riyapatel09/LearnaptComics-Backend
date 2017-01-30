@@ -11,23 +11,23 @@ class SharedImagesUploader < CarrierWave::Uploader::Base
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    "uploads/#{model.class.to_s.underscore}/#{model.id}"
   end
-  version :large do
-    process resize_to_limit: [1500, 1500]
-  end
+  #version :large do
+  # process resize_to_limit: [1500, 1500]
+  #end
 
-  version :medium do
-    process resize_to_limit: [700, 700]
-  end
+  #version :medium do
+  # process resize_to_limit: [700, 700]
+  #end
 
-  version :thumb do
-    process resize_to_fit: [100, 100]
-  end
+  #version :thumb do
+  #process resize_to_fit: [100, 100]
+  #end
 
-  version :square do
-    process :resize_to_fill => [500, 500]
-  end
+  #version :square do
+  #process :resize_to_fill => [500, 500]
+  #end
 
 
 

@@ -41,7 +41,7 @@ class SharedImagesController < ApplicationController
     @sharedImage = SharedImage.find(params[:id])
     @sharedImage.destroy
  
-    redirect_to sharedImages_path, notice: 'SharedImage was successfully destroyed.'
+    redirect_to shared_images_path, notice: 'SharedImage was successfully destroyed.'
   end
 
   private
