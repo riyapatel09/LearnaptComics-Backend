@@ -3,6 +3,8 @@
 <%= @sharedImage.original_image %>
 <%= image_tag @sharedImage.original_image.to_s %>
 <%= link_to 'Back', shared_images_path %>
-<img src="<%= @sharedImage.original_image.url %>" /><br/>
+
+<img src="<%= @sharedImage.original_image.thumb %>" /><br/>
+<img src="<%= @sharedImage.original_image.compressed%>" /><br/>
 
 </p>

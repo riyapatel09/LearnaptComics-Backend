@@ -17,9 +17,12 @@ class SharedImagesUploader < CarrierWave::Uploader::Base
   # process resize_to_limit: [1500, 1500]
   #end
 
-  #version :medium do
-  # process resize_to_limit: [700, 700]
-  #end
+  version :compressed do
+   process resize_to_limit: [500, 500]
+   def store_dir
+      "uploads/#{model.class.to_s.underscore}/#{model.id}/compressed_image"
+    end
+  end
 
   #version :thumb do
   #process resize_to_fit: [100, 100]
@@ -47,9 +50,14 @@ class SharedImagesUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-  # version :thumb do
-  #   process resize_to_fit: [50, 50]
-  # end
+  version :thumb do
+  process resize_to_fit: [50, 50]
+    def store_dir
+      "uploads/#{model.class.to_s.underscore}/#{model.id}/thumbnail_image"
+    end
+  end
+
+  
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
