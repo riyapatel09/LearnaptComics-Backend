@@ -1,0 +1,7 @@
+<%= form_for @sharedImage, :html => {:multipart => true} do |f| %>
+  <p>
+    <%= f.file_field :original_image %>
+  </p>
+
+  <p><%= f.submit %></p>
+<% end %>
