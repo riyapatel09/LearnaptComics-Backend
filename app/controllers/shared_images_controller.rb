@@ -10,7 +10,6 @@ class SharedImagesController < ApplicationController
   
   def new
     @sharedImage = SharedImage.new
-    #@comic = Comic.new
   end
 
   def create
@@ -30,7 +29,10 @@ class SharedImagesController < ApplicationController
   def update
     @sharedImage = SharedImage.find(params[:id])
  
-    if @sharedImage.update(shared_image_params)
+    original_file = params[:shared_image][:original_image]
+    @sharedImage.original_image = original_file
+
+    if @sharedImage.save
       redirect_to @sharedImage, notice: 'SharedImage attachment was syuccessfully updated.'
     else
       render 'edit'

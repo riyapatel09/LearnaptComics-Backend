@@ -6,18 +6,7 @@ class ComicsController < ApplicationController
   
   def show
     @comic = Comic.find(params[:id])
-    @sharedImages = []
-    @comicImages = ComicImage.where(:comic_id => @comic.id)
-    @comicImages.each do |comicImage|
-      onesharedImage = SharedImage.where(:id => comicImage.shared_image_id)
-      @sharedImages += onesharedImage if onesharedImage
-    end
-    
-    
-      #onesharedImage = SharedImage.where(:id => comicImage.shared_image_id)
-      #@sharedImages += onesharedImage if onesharedImage
-    #end
-    
+    @comic_images = @comic.comic_images  
   end
   
   def new

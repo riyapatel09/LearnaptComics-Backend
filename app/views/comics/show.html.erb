@@ -54,12 +54,12 @@
 <div class="table-responsive">
     <table class="table table-striped">
       <thead>
-  <% @sharedImages.each do |sharedImage| %>
+  <% @comic_images.each do |comic_image| %>
     <tr>
-      <td><%= image_tag sharedImage.original_image.thumb.to_s %></td>
-      <td><%= link_to 'Show', shared_image_path(sharedImage) %></td>
-      <td><%= link_to 'Edit', edit_comic_comic_image_path(@comic.id,sharedImage) %></td>
-      <td><%= link_to 'Destroy', shared_image_path(sharedImage),
+      <td><%= image_tag comic_image.shared_image.original_image.thumb.to_s %></td>
+      <td><%= link_to 'Show', shared_image_path(comic_image.shared_image) %></td>
+      <td><%= link_to 'Edit', edit_comic_comic_image_path(@comic.id, comic_image.id) %></td>
+      <td><%= link_to 'Destroy', shared_image_path(comic_image.shared_image),
                              method: :delete,
                              data: { confirm: 'Are you sure?' } %></td>
     </tr>

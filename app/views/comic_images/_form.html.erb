@@ -1,7 +1,14 @@
-<%= form_for @sharedImage, :html => {:multipart => true} do |f| %>
+<%= form_tag comic_comic_image_path(@comic,@comic_image),method: :put, multipart: true do |f| %>
   <p>
-    <%= f.file_field :original_image %>
+    <%= file_field_tag "shared_image[original_image]" %>
   </p>
 
-  <p><%= f.submit %></p>
+  <p>
+    <%= text_field_tag "order" %>
+  </p>
+
+
+  <p><%= submit_tag %></p>
 <% end %>
+
+
