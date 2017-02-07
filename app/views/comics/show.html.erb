@@ -57,6 +57,7 @@
   <% @comic_images.each do |comic_image| %>
     <tr>
       <td><%= image_tag comic_image.shared_image.original_image.thumb.to_s %></td>
+      <td><%= comic_image.order %></td>
       <td><%= link_to 'Show', shared_image_path(comic_image.shared_image) %></td>
       <td><%= link_to 'Edit', edit_comic_comic_image_path(@comic.id, comic_image.id) %></td>
       <td><%= link_to 'Destroy', shared_image_path(comic_image.shared_image),
